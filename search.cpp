@@ -566,18 +566,13 @@ int search_pos_near(vector<int> pos_rest,vector<multimap<string,postings_list>::
 	}
 	   return 0;
 	}
-int main()
-{
-	//传入数据库名并打开数据库
-	DB *dbp;
-	char *dbname="search12.db";
-	opendb(&dbp,dbname);
-	//由输入的文本分隔
+    
 
-	//TODO:
+
+int search_all(DB *dbp,char *tmp)
+{
 	vector<string> result_split;//分隔的结果
 	vector<string> result_sort;
-	char *tmp="浮生若梦人世事";
 	string getfromuser(tmp);
 	split_searchstr(tmp,getfromuser.size(),result_split);
 	cout<<result_split.size()<<endl;
@@ -589,8 +584,8 @@ int main()
         //得到用户的输入-----------------notice----------
 	//string key="xx";
 	//从数据库取得数据填充到map中
-  for(size_t i=0;i<result_split.size();i++)
-	read_db(result_split[i],dbp);//读取某个key的数据填充到map中
+       for(size_t i=0;i<result_split.size();i++)
+        	read_db(result_split[i],dbp);//读取某个key的数据填充到map中
 	
 		//print the result:
 		for(multimap<string,postings_list>::iterator it=post_index.begin();it!=post_index.end();++it)
@@ -620,9 +615,24 @@ int main()
        }
        for(size_t y=0;y!=pageid_posright.size();y++)
             cout<<"ppppppppp=+++++++:"<<pageid_posright[y];
-		      
+       return 0;
+    }	      
 //int search_pos_near(vector<int> pos_rest,vector<multimap<string,postings_list>::iterator> pageid_ptr)//返回在同一个文档中位置相邻的指针集合,结构同pageid_ptrset,算法与search()相似,注意按照原始字符串的词元顺序
-      return 0;
+int main()
+{
+	//传入数据库名并打开数据库
+	DB *dbp;
+	char *dbname="search12.db";
+	opendb(&dbp,dbname);
+	//由输入的文本分隔
+
+	//TODO:
+	
+	//vector<string> result_split;//分隔的结果
+//	vector<string> result_sort;
+	char *tmp="浮生若梦人世事";
+        search_all(dbp,tmp);
+	return 0;
   }
 
 
