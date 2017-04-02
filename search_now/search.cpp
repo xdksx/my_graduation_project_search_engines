@@ -570,7 +570,7 @@ int search_pos_near(vector<int> pos_rest,vector<multimap<string,postings_list>::
 
 
 int search_all(DB *dbp,char *tmp)
-    {
+{
 	vector<string> result_split;//分隔的结果
 	vector<string> result_sort;
 	string getfromuser(tmp);
