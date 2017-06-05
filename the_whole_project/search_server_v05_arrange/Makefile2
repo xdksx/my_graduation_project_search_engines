@@ -1,0 +1,8 @@
+search_server_v5_arrange:search_server_v5_arrange.o search.o
+	g++ -I /usr/local/berkeleydb/include/ -o search_server_v5_arrange search_server_v5_arrange.o search.o -L /usr/local/berkeleydb/lib/ -ldb
+search_server_v5_arrange.o:search_server_v5_arrange.cpp search.h
+	g++ -I /usr/local/berkeleydb/include/ -c search_server_v5_arrange.cpp -L /usr/local/berkeleydb/lib/ -ldb
+search.o:search.cpp search.h
+	g++ -I /usr/local/berkeleydb/include/ -c search.cpp -L /usr/local/berkeleydb/lib/ -ldb
+	
+

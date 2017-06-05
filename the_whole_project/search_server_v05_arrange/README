@@ -1,0 +1,2 @@
+此目录下的图片和.html文件均为服务器返回的前端网页，其他.cpp ,h文件为源程序，.db为数据库，主要源代码文件是search.cpp,search_server_v5_arrange.cpp文件配置文件有search.conf,可以更改要发送的网卡，端口等内容，网卡即可取得要绑定的ip地址
+　运行时，sudo ./search_server_v5_arrange即可

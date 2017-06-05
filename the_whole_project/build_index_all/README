@@ -1,0 +1,9 @@
+　　　此目录中包含build_index_m和build_index_one文件夹，分别包含两个可执行文件，是分别建立1-gram和2-gram倒排索引的程序，html_file为源文件，用以建立索引．剩下的文件是两个程序的公共部分．
+　　　　　运行程序时．需要指定第二个参数为源网页文件位置，如进入build_index_m后
+        ./xx  ../html_file
+　　　　　　　　　之后会生成数据库：index_builded_oneword.db和index_builded.db分别对应上面的两个情况
+　　　　　　　且会将数据库放入search_server_v05_arrange文件夹中，可以使用run.sh来进行新的倒排索引建立和更新数据库或者替换
+
+注意暂时无法处理日文等其他文字，由于字符utf-8编码不同，另外，仅针对utf-8编码，因为是在细节到编码方式上的处理而不是调用库
+  run脚本用来重新建立倒排索引的脚本，测试用
+              
